@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Date and Time</title>
+    <style>
+        body {
+            background: lightblue;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            font-size: 23px;
+            background: mistyrose;
+            border: 3px solid maroon;
+            padding: 34px;
+            margin: 20px auto;
+            width: 50%;
+            border-radius: 15px;
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        #dateTime {
+            font-weight: bold;
+            margin-top: 15px;
+            color: darkgreen;
+        }
+        .button-style {
+            background: blue;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .button-style:hover {
+            background: darkgreen;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Click the button to see the current date and time</h1>
+        <button class="button-style" onclick="displayDateTime()">Show Date and Time</button>
+        <p id="dateTime"></p>
+    </div>
+    <script>
+        function displayDateTime() {
+            document.getElementById("dateTime").innerText = new Date().toLocaleString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+        }
+    </script>
+</body>
+</html>
